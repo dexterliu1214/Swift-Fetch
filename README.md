@@ -11,6 +11,5 @@ fetch("https://example.com") {
     case .success(let response):
         print(response.data.text()!)
     }
-    expect.fulfill()
 }
 ```
