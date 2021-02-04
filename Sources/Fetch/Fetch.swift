@@ -39,7 +39,7 @@ public extension Date
     }
 }
 
-extension Data {
+public extension Data {
     func text(encoding: String.Encoding = .utf8) -> String? {
         String(data: self, encoding: encoding)
     }
