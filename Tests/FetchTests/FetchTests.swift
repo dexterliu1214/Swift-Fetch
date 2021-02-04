@@ -6,10 +6,17 @@ final class FetchTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(Fetch().text, "Hello, World!")
+        let expect = expectation(description: #function)
+        fetch("https://example.com") {
+            switch $0 {
+            case .failure(let error):
+                print(error)
+            case .success(let response):
+                print(try! response.data.text(encoding: .ascii))
+                XCTAssert(response.ok)
+            }
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 3.0)
     }
-
-    static var allTests = [
-        ("testExample", testExample),
-    ]
 }
