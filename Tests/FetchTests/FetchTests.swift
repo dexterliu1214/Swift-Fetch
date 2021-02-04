@@ -12,7 +12,7 @@ final class FetchTests: XCTestCase {
             case .failure(let error):
                 print(error)
             case .success(let response):
-                print(try! response.data.text(encoding: .ascii))
+                print(response.data.text()!)
                 XCTAssert(response.ok)
             }
             expect.fulfill()
