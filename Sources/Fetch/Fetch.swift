@@ -14,6 +14,10 @@ public extension Encodable
             $0[$1.label!] = $1.value as? String
         }
     }
+    
+    func json() throws -> Data  {
+        try JSONEncoder().encode(self)
+    }
 }
 
 public extension DateFormatter
