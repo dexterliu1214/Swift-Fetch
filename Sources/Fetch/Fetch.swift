@@ -108,6 +108,10 @@ public struct FormData {
         return temp
     }
     
+    public init() {
+        
+    }
+    
     public mutating func append(_ name:String, value:Data) {
         _data.append("--\(boundary)\r\n")
         _data.append("Content-Disposition: form-data; name=\"\(name)\"\r\n")
