@@ -69,6 +69,9 @@ public extension Data {
 
 public protocol Requestable {
     associatedtype Response:Decodable
+}
+
+public protocol HTTPRequest {
     var url:String { get }
 }
 
