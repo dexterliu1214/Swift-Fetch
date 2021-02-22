@@ -69,6 +69,7 @@ public extension Data {
 
 public protocol Requestable {
     associatedtype Response:Decodable
+    var url:String { get }
 }
 
 public struct Response
