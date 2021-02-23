@@ -71,10 +71,6 @@ public protocol Requestable {
     associatedtype Response:Decodable
 }
 
-public protocol HTTPRequest {
-    var url:String { get }
-}
-
 public struct Response
 {
     public let headers:HTTPURLResponse
